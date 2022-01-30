@@ -1,0 +1,107 @@
+body{
+    font-family: Inter;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+  
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+#main::-webkit-scrollbar {
+    display: none;
+}
+  
+/* Hide scrollbar for IE, Edge and Firefox */
+#main {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+h1{
+    font-size: large;
+    color: rgba(30, 86, 151, 1);
+}
+.body-text2{
+    font-size: small;
+    font-weight: 400;
+}
+.logo-img-box{
+    width: 4em;
+    height: 2em;
+    border: 1px solid red;
+    background-color: black;
+    opacity: 40%;
+    color: white;
+    position: relative;
+    
+}
+.topnav-header{
+    padding-left: 1em;
+}
+.topnav-search{
+    width:100%; border-radius: 10px;
+    border: solid 2px rgba(196, 196, 196, 1);
+}
+.link-color{
+    color: rgba(28, 129, 245, 1);
+}
+.link-circle{
+    width: 3em;
+    height: 3em;
+    border-radius: 3em;
+    border: 2px rgba(73, 71, 71, 1) solid;
+    position: relative;
+    background-color: rgba(73, 71, 71, 1);
+    color: white;
+}
+.link-circle-active{
+    width: 3em;
+    height: 3em;
+    border-radius: 3em;
+    border: 2px rgba(0, 0, 0, 1) solid;
+    position: relative;
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+}
+.link-circle2{
+    background: rgba(196, 196, 196, 1);
+    width: 3em;
+    height: 3em;
+    border-radius: 3em;
+    
+    position: relative;
+}
+.link-transition-active{
+    width: 0.5em;
+    height: 3em;
+    background-color: rgba(37, 37, 37, 1);
+}
+.link-transition{
+    width: 0.5em;
+    height: 3em;
+    background-color: rgba(196, 196, 196, 1);
+    
+}
+input:focus {
+    outline: none;
+    
+}
+.input-box{
+    height: 4em; width: 100%;background-color: transparent;border: black 1px solid;border-radius: 10px;
+}
+.input-box2{
+    height: 3em; background-color: transparent;border: black 1px solid;border-radius: 10px;
+}
+.input-label{
+    width: auto;height: 30px;background-color: rgba(160, 241, 255, 1);position: absolute;top: -45%;border-radius: 10px;padding: 5px 5px 5px 5px;
+}
+.input-label2{
+    width: auto;height: 30px;background-color: rgba(196, 196, 196, 1);position: absolute;top: -20%;left: 2%;border-radius: 10px;padding: 5px 5px 5px 5px;
+}
+.input-label3{
+    width: auto;height: 2em;background-color: rgba(196, 196, 196, 1);position: absolute;top: -40%;left: 2%;border-radius: 10px;padding: 5px 5px 5px 5px;
+}
