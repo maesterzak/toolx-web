@@ -2,6 +2,9 @@ body{
     font-family: Inter;
     background-color: rgba(255, 255, 255, 1);
 }
+a{
+    text-decoration: none;
+}
 
 body::-webkit-scrollbar {
     display: none;
@@ -24,6 +27,7 @@ body {
 h1{
     font-size: large;
     color: rgba(30, 86, 151, 1);
+    font-weight: bold;
 }
 .body-text2{
     font-size: small;
@@ -105,3 +109,10 @@ input:focus {
 .input-label3{
     width: auto;height: 2em;background-color: rgba(196, 196, 196, 1);position: absolute;top: -40%;left: 2%;border-radius: 10px;padding: 5px 5px 5px 5px;
 }
+select{
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
