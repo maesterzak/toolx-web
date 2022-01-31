@@ -20,12 +20,12 @@
       crossorigin="anonymous"
     />
     <!--main stylesheet-->
-    <!--<link
+    <link
       rel="stylesheet"
       id="main-stylesheet"
       data-version="1.1.0"
       href="/bootstrap/css/bootstrap.min.css"
-    />-->
+    />
     <link
       rel="stylesheet"
       id="main-stylesheet"
@@ -132,73 +132,79 @@
 
     <div id="main" style="overflow: scroll; height: 100vh;width: 100%;margin-right: 0; position: absolute;">
         <!--topbar-->
-    <div class="row g-0">
-      <div class="col-3 d-flex align-items-center">
-        <div class="logo-img-box d-flex justify-content-center">
-          <img
-            src="/static/times4.png"
-            style="width: 100%; height: 100%; opacity: 50%"
-          />
-          <span style="position: absolute">Logo</span>
-        </div>
-        <div class="topnav-header">Tools X</div>
-      </div>
-      <div class="col-9 col-md-7 pt-3">
-        <form class="mb-3 w-100">
-          <input
-            style="border-radius: 10px; background-color: transparent"
-            type="text"
-            class="form-control"
-            placeholder="Paste Address Here"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </form>
-      </div>
-      <div class="col-2 d-none d-sm-block ">
-          <div class="h-100 d-flex align-items-center justify-content-end">
-        <form id="subjectName" name="abi" class="select" tabindex="1"
-            onchange="selectedSubjectName()"">
-            <input checked class=" option-select selectopt" name="test" type="radio" id="opt1"
-            value="usd">
-            <label for="opt1" class="option d-flex justify-content-around"><img width="20px"
-                    height="auto" src="/static/united-states.svg">USD</label>
-            <input class="option-select selectopt" name="test" type="radio" id="opt2"
-                value="algo">
-            <label for="opt2" class="option"><img width="30 height=" auto"
-                    src="/static/algorand_logo_mark_white.svg">ALGO</label>
-
-        </form>
-    </div>
-      </div>
-    </div>
-    <div>
+        <div class="row g-0">
+          <!--title/logo-->
+          <div class="col-3 d-flex align-items-center">
+            <div class="logo-img-box d-flex justify-content-center">
+              <img
+                src="/static/times4.png"
+                style="width: 100%; height: 100%; opacity: 50%"
+              />
+              <span style="position: absolute">Logo</span>
+            </div>
+            <div class="topnav-header">Tools X</div>
+          </div>
+          <!--end of title/logo-->
+          <!--searchbar visible only on md screens-->
+          <div class="col-9 d-none d-sm-block col-md-7 pt-3">
+            <form class="mb-3 w-100">
+              <input
+                style="border-radius: 10px; background-color: transparent"
+                type="text"
+                class="form-control"
+                placeholder="Paste Address Here"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </form>
+          </div>
+          <!--end of searchbar-->
+          
         
-    <div class="row g-0">
-        <div class="col-2 col-md-1">
-            <i style="font-size: 3em" class="fas fa-bars link-color"></i>
-            
+        <!--algo/usd toggle-->
+          <div class="col-9 col-md-2 mb-3">
+              <div class="h-100 d-flex align-items-center justify-content-end">
+                <form id="subjectName" name="abi" class="select" tabindex="1"
+                onchange="selectedSubjectName()"">
+                <input checked class=" option-select selectopt bg-dark" name="test" type="radio" id="opt1"
+                value="usd">
+                <label for="opt1" class="option d-flex justify-content-around"><img width="20px"
+                        height="auto" src="/static/united-states.svg">USD</label>
+                <input class="option-select selectopt bg-warning" name="test" type="radio" id="opt2"
+                    value="algo">
+                <label for="opt2" class="option"><img width="30 height=" auto"
+                        src="/static/algorand_logo_mark_white.svg">ALGO</label>
+    
+            </form>
         </div>
-        <div class="col-6 col-md-11 d-flex align-items-end">
-            <h1>Create LaunchPad</h1>
+          </div>
+          <!--end of algo/usd-->
+          <!--serchbar visible only on xs screens-->
+          <div class="col-12 d-block d-sm-none">
+            <form class="mb-3 w-100">
+              <input
+                style="border-radius: 10px; background-color: transparent"
+                type="text"
+                class="form-control"
+                placeholder="Paste Address Here"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+              />
+            </form>
+    
+          </div>
+          <!--end of searchbar-->
         </div>
-        <div class="col-4 d-block d-sm-none ">
-            
-          <form id="subjectName" name="abi" class="select" tabindex="1"
-              onchange="selectedSubjectName()"">
-              <input checked class=" option-select selectopt" name="test" type="radio" id="opt1"
-              value="usd">
-              <label for="opt1" class="option d-flex justify-content-around"><img width="20px"
-                      height="auto" src="/static/united-states.svg">USD</label>
-              <input class="option-select selectopt" name="test" type="radio" id="opt2"
-                  value="algo">
-              <label for="opt2" class="option"><img width="30 height=" auto"
-                      src="/static/algorand_logo_mark_white.svg">ALGO</label>
-  
-          </form>
-      
-        </div>
-    </div>
+        <div class="row g-0">
+          <div class="col-2 col-md-1">
+              <i style="font-size: 3em" class="fas fa-bars link-color"></i>
+              
+          </div>
+          <div class="col-6 col-md-11 d-flex align-items-end">
+              <h1>Create LaunchPad</h1>
+          </div>
+          
+      </div>
 
     <div class="row g-0 mt-3">
       <div class="col-3 col-xs-12"></div>
@@ -278,7 +284,7 @@
             );
           "
         >
-        <form id="add_info_form" onsubmit="form_d(this.id)">
+        <form id="form3" onsubmit="form_d(event, this.id)">
           <span>(*) indicates required fields</span>
           <!--start of input fields-->
           <div class="row">
@@ -295,7 +301,7 @@
                             <i class="fas fa-image text-secondary"></i>
                         </span>
                       </div>
-                    <input
+                    <input name="token_logourl"
                       class="w-100"
                       placeholder="Https://"
                       style="background: transparent; border: transparent"
@@ -316,7 +322,7 @@
                     <span style="background-color: transparent;" class="input-group-text" id="inputGroupPrepend3">
                         <i class="fas fa-globe text-secondary"></i>
                     </span>
-                    <input
+                    <input name="token_website"
                       class="w-100"
                       placeholder="Https://"
                       style="background: transparent; border: transparent"
@@ -341,7 +347,7 @@
                           <i class="fab fa-discord text-secondary"></i>
                       </span>
                     </div>
-                  <input
+                  <input name="token_discord"
                     class="w-100"
                     placeholder="Https://"
                     style="background: transparent; border: transparent"
@@ -362,7 +368,7 @@
                   <span style="background-color: transparent;" class="input-group-text" id="inputGroupPrepend3">
                       <i class="fab fa-twitter text-secondary"></i>
                   </span>
-                  <input
+                  <input name="token_twitter"
                     class="w-100"
                     placeholder="Https://"
                     style="background: transparent; border: transparent"
@@ -388,7 +394,7 @@
                           <i class="fab fa-reddit text-secondary"></i>
                       </span>
                     </div>
-                  <input
+                  <input name="token_reddit"
                     class="w-100"
                     placeholder="Https://"
                     style="background: transparent; border: transparent"
@@ -409,7 +415,7 @@
                   <span style="background-color: transparent;" class="input-group-text" id="inputGroupPrepend3">
                       <i class="fab fa-telegram text-secondary"></i>
                   </span>
-                  <input
+                  <input name="token_telegram"
                     class="w-100"
                     placeholder="Https://"
                     style="background: transparent; border: transparent"
@@ -429,7 +435,7 @@
         <div class="row w-100 p-2 g-0 ">
           <div class="col-12">
             
-            <textarea
+            <textarea name="token_description"
               class=""
               placeholder="Ex: This Project is being created for..."
               style="background: transparent; border: transparent;height: 5em;"
@@ -439,33 +445,38 @@
       </div>
           
           <!--input end-->
-          <div class="d-flex justify-content-center">
-            <div class="d-flex justify-content-between" style="width: 20%">
-                <a
-                  href="/index.html"
-                  class="btn-lg"
-                  style="
-                    text-decoration: none;
-                    background-color: white;
-                    border: none;
-                    margin-top: 1.5em;
-                  "
-                >
-                  Back
-                </a>
-                <button
-                  
-                  type="submit"
-                  class="btn-lg"
-                  style="text-decoration: none;
-                    background-color: white;
-                    border: none;
-                    margin-top: 1.5em;
-                  "
-                >
-                  Next
-                </button>
-              </div>
+          <div class="row mt-3">
+            <div class="col-6 d-flex justify-content-end">
+              <a
+              href="/launchpad-info.html"
+              class="btn link-color"
+              style="
+              
+                background-color: white;
+                border: none;    
+              "
+            >
+              Back
+            </a>
+
+            </div>
+            <div class="col-6 d-flex justify-content-begin">
+              <button
+              type="submit"
+              class="btn link-color"
+              style="
+                
+                background-color: white;
+                
+                border: none;
+                
+              "
+            >
+              Next
+          </button>
+            </div>
+            
+            
           </div>
         </form>
           <!--end of input fields-->

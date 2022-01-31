@@ -1,7 +1,14 @@
-function form_d(e){
+//forms onsubmit
+function form_d(e, formID){
     e.preventDefault();
-    console.log('helloe')
-}// which button is selected algo or usd
+    
+    var formData =new FormData(e.target)
+    //each form id is represented by formID the value changes depending on the form submitted
+    console.log(formID)
+    const form_values=Object.fromEntries(formData)
+    console.log(form_values)
+}
+// which button is selected algo or usd
 
 function selectedSubjectName() {
     var radios = document.getElementsByName("test");

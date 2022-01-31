@@ -19,12 +19,12 @@
       crossorigin="anonymous"
     />
     <!--main stylesheet-->
-    <!--<link
+    <link
       rel="stylesheet"
       id="main-stylesheet"
       data-version="1.1.0"
       href="/bootstrap/css/bootstrap.min.css"
-    />-->
+    />
     <link
       rel="stylesheet"
       id="main-stylesheet"
@@ -129,6 +129,7 @@
     <div id="main" class="w-100" style="overflow-x: hidden;overflow-y: scroll; height: 100vh; position: absolute">
     <!--topbar-->
     <div class="row g-0">
+      <!--title/logo-->
       <div class="col-3 d-flex align-items-center">
         <div class="logo-img-box d-flex justify-content-center">
           <img
@@ -139,7 +140,9 @@
         </div>
         <div class="topnav-header">Tools X</div>
       </div>
-      <div class="col-9 col-md-7 pt-3">
+      <!--end of title/logo-->
+      <!--searchbar visible only on md screens-->
+      <div class="col-9 d-none d-sm-block col-md-7 pt-3">
         <form class="mb-3 w-100">
           <input
             style="border-radius: 10px; background-color: transparent"
@@ -151,7 +154,11 @@
           />
         </form>
       </div>
-      <div class="col-2 d-none d-sm-block ">
+      <!--end of searchbar-->
+      
+    
+    <!--algo/usd toggle-->
+      <div class="col-9 col-md-2 mb-3">
           <div class="h-100 d-flex align-items-center justify-content-end">
             <form id="subjectName" name="abi" class="select" tabindex="1"
             onchange="selectedSubjectName()"">
@@ -167,6 +174,22 @@
         </form>
     </div>
       </div>
+      <!--end of algo/usd-->
+      <!--serchbar visible only on xs screens-->
+      <div class="col-12 d-block d-sm-none">
+        <form class="mb-3 w-100">
+          <input
+            style="border-radius: 10px; background-color: transparent"
+            type="text"
+            class="form-control"
+            placeholder="Paste Address Here"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </form>
+
+      </div>
+      <!--end of searchbar-->
     </div>
     <div class="row g-0">
       <div class="col-2 col-md-1">
@@ -176,24 +199,10 @@
       <div class="col-6 col-md-11 d-flex align-items-end">
           <h1>Create LaunchPad</h1>
       </div>
-      <div class="col-4 d-block d-sm-none ">
-          <div class="h-100 d-flex align-items-center justify-content-end">
-        <form id="subjectName" name="abi" class="select" tabindex="1"
-            onchange="selectedSubjectName()"">
-            <input checked class=" option-select selectopt" name="test" type="radio" id="opt1"
-            value="usd">
-            <label for="opt1" class="option d-flex justify-content-around"><img width="20px"
-                    height="auto" src="/static/united-states.svg">USD</label>
-            <input class="option-select selectopt" name="test" type="radio" id="opt2"
-                value="algo">
-            <label for="opt2" class="option"><img width="30 height=" auto"
-                    src="/static/algorand_logo_mark_white.svg">ALGO</label>
-
-        </form>
-    </div>
-      </div>
+      
   </div>
     <div class="row g-0 mt-3">
+      
       <div class="col-3"></div>
       <div class="col-9">
         <h1>VERIFY TOKEN</h1>
@@ -281,16 +290,17 @@
             );
           "
         >
+        <form id="form1" onsubmit="form_d(event, this.id)">
           <span>(*) indicates required fields</span>
 
           <div class="d-flex align-items-center mt-3 mb-3 input-box">
-            <form class="row g-0 w-100 p-4">
+            <div class="row g-0 w-100 p-4">
               <div
                 class="col-9 col-md-11  d-flex align-items-around"
                 style="position: relative"
               >
                 <div class="input-label">Token Address</div>
-                <input
+                <input name='token_address' 
                   class="w-100"
                   placeholder="e.g 0xcDjfoeWxskEEFnfohienfAajakdkAlekl,fk Ed"
                   style="background: transparent; border: transparent"
@@ -300,12 +310,12 @@
                 <button
                   class="btn-sm"
                   style="border: transparent; background-color: white"
-                  type="submit"
+                  
                 >
                   Create
                 </button>
               </div>
-            </form>
+            </div>
           </div>
           <span>Fee: 150 A </span>
 
@@ -316,61 +326,66 @@
             style="position: relative"
           >
             <div class="input-label2">Name</div>
-            <form class="row g-0 w-100 p-4">
+            <div class="row g-0 w-100 p-4">
               <div class="col-12 d-flex align-items-around">
                 <input
+                  name='token_name'
                   class="w-100"
                   placeholder="E.g. Tools X"
                   style="background: transparent; border: transparent"
                 />
               </div>
-            </form>
+            </div>
           </div>
           <div
             class="d-flex align-items-center mt-4 mb-3 input-box"
             style="position: relative"
           >
             <div class="input-label2">Symbols</div>
-            <form class="row g-0 w-100 p-4">
+            <div class="row g-0 w-100 p-4">
               <div class="col-12 d-flex align-items-around">
                 <input
+                  name="token_symbol"
                   class="w-100"
                   placeholder="E.g. Tools X"
                   style="background: transparent; border: transparent"
                 />
               </div>
-            </form>
+            </div>
           </div>
           <div
             class="d-flex align-items-center mt-4 mb-3 input-box"
             style="position: relative"
           >
             <div class="input-label2">Decimal</div>
-            <form class="row g-0 w-100 p-4">
+            <div class="row g-0 w-100 p-4">
               <div class="col-12 d-flex align-items-around">
                 <input
+                  name="token_decimal"
                   class="w-100"
                   placeholder="E.g. Tools X"
                   style="background: transparent; border: transparent"
                 />
               </div>
-            </form>
+            </div>
           </div>
           <!--input end-->
           <div class="d-flex justify-content-center">
-            <a
-              href="/launchpad-info.html"
-              class="btn-lg"
+            <button
+              type="submit"
+
+              class="btn link-color"
               style="
                 background-color: white;
                 border: none;
                 margin-top: 1.5em;
-                text-decoration: none;
+                
               "
             >
               NEXT
-            </a>
+            </button>
           </div>
+        </form>
         </div>
       </div>
     </div>
@@ -416,5 +431,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="/static/main.js"></script>
   </body>
 </html>

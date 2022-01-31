@@ -19,13 +19,13 @@
       crossorigin="anonymous"
     />
     <!--main stylesheet-->
-    <!--
+    
     <link
       rel="stylesheet"
       id="main-stylesheet"
       data-version="1.1.0"
       href="/bootstrap/css/bootstrap.min.css"
-    />-->
+    />
     <link
       rel="stylesheet"
       id="main-stylesheet"
@@ -132,7 +132,8 @@
 
     <div id="main" style="overflow: scroll; height: 100vh; position: absolute">
       <!--topbar-->
-      <div class="row g-0 g-0">
+      <div class="row g-0">
+        <!--title/logo-->
         <div class="col-3 d-flex align-items-center">
           <div class="logo-img-box d-flex justify-content-center">
             <img
@@ -143,7 +144,9 @@
           </div>
           <div class="topnav-header">Tools X</div>
         </div>
-        <div class="col-9 col-md-7 pt-3">
+        <!--end of title/logo-->
+        <!--searchbar visible only on md screens-->
+        <div class="col-9 d-none d-sm-block col-md-7 pt-3">
           <form class="mb-3 w-100">
             <input
               style="border-radius: 10px; background-color: transparent"
@@ -155,15 +158,19 @@
             />
           </form>
         </div>
-        <div class="col-2 d-none d-sm-block ">
+        <!--end of searchbar-->
+        
+      
+      <!--algo/usd toggle-->
+        <div class="col-9 col-md-2 mb-3">
             <div class="h-100 d-flex align-items-center justify-content-end">
-          <form id="subjectName" name="abi" class="select" tabindex="1"
+              <form id="subjectName" name="abi" class="select" tabindex="1"
               onchange="selectedSubjectName()"">
-              <input checked class=" option-select selectopt" name="test" type="radio" id="opt1"
+              <input checked class=" option-select selectopt bg-dark" name="test" type="radio" id="opt1"
               value="usd">
               <label for="opt1" class="option d-flex justify-content-around"><img width="20px"
                       height="auto" src="/static/united-states.svg">USD</label>
-              <input class="option-select selectopt" name="test" type="radio" id="opt2"
+              <input class="option-select selectopt bg-warning" name="test" type="radio" id="opt2"
                   value="algo">
               <label for="opt2" class="option"><img width="30 height=" auto"
                       src="/static/algorand_logo_mark_white.svg">ALGO</label>
@@ -171,8 +178,24 @@
           </form>
       </div>
         </div>
+        <!--end of algo/usd-->
+        <!--serchbar visible only on xs screens-->
+        <div class="col-12 d-block d-sm-none">
+          <form class="mb-3 w-100">
+            <input
+              style="border-radius: 10px; background-color: transparent"
+              type="text"
+              class="form-control"
+              placeholder="Paste Address Here"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </form>
+  
+        </div>
+        <!--end of searchbar-->
       </div>
-      <div class="row g-0 g-0">
+      <div class="row g-0">
         <div class="col-2 col-md-1">
             <i style="font-size: 3em" class="fas fa-bars link-color"></i>
             
@@ -180,22 +203,7 @@
         <div class="col-6 col-md-11 d-flex align-items-end">
             <h1>Create LaunchPad</h1>
         </div>
-        <div class="col-4 d-block d-sm-none ">
-            <div class="h-100 d-flex align-items-center justify-content-end">
-          <form id="subjectName" name="abi" class="select" tabindex="1"
-              onchange="selectedSubjectName()"">
-              <input checked class=" option-select selectopt" name="test" type="radio" id="opt1"
-              value="usd">
-              <label for="opt1" class="option d-flex justify-content-around"><img width="20px"
-                      height="auto" src="/static/united-states.svg">USD</label>
-              <input class="option-select selectopt" name="test" type="radio" id="opt2"
-                  value="algo">
-              <label for="opt2" class="option"><img width="30 height=" auto"
-                      src="/static/algorand_logo_mark_white.svg">ALGO</label>
-  
-          </form>
-      </div>
-        </div>
+        
     </div>
       <div class="row g-0 mt-3">
         <div class="col-3"></div>
@@ -261,6 +269,7 @@
         </div>
         </div>
         <div class="col-12 col-md-9">
+          <form id="form2" onsubmit="form_d(event, this.id)">
           <div
             class="mt-3 p-3"
             style="
@@ -280,15 +289,15 @@
               style="position: relative"
             >
               <div class="input-label3">Presale Rate</div>
-              <form class="row g-0 w-100 p-4">
+              <div class="row g-0 w-100 p-4">
                 <div class="col-12 d-flex align-items-around">
-                  <input
+                  <input name="token_presale"
                     class="w-100"
                     placeholder="0.00"
                     style="background: transparent; border: transparent"
                   />
                 </div>
-              </form>
+              </div>
             </div>
             <span>If I Spend 1 Algo, how many algo, will I receive? </span>
 
@@ -300,15 +309,15 @@
                   style="position: relative"
                 >
                   <div class="input-label3">Softcap (ALGO)</div>
-                  <form class="row g-0 w-100 p-4">
+                  <div class="row g-0 w-100 p-4">
                     <div class="col-12 d-flex align-items-around">
-                      <input
+                      <input name="token_softcap_algo"
                         class="w-100"
                         placeholder="0.00"
                         style="background: transparent; border: transparent"
                       />
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
               <div class="col-12 col-md-6">
@@ -317,15 +326,15 @@
                   style="position: relative"
                 >
                   <div class="input-label3">Hardcap (ALGO)</div>
-                  <form class="row g-0 w-100 p-4">
+                  <div class="row g-0 w-100 p-4">
                     <div class="col-12 d-flex align-items-around">
-                      <input
+                      <input name="token_hardcap_algo"
                         class="w-100"
                         placeholder="0.00"
                         style="background: transparent; border: transparent"
                       />
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -338,15 +347,15 @@
                   style="position: relative"
                 >
                   <div class="input-label3">Mininum Buy (ALGO)</div>
-                  <form class="row g-0 w-100 p-4">
+                  <div class="row g-0 w-100 p-4">
                     <div class="col-12 d-flex align-items-around">
-                      <input
+                      <input name="token_minbuy_algo"
                         class="w-100"
                         placeholder="0.00"
                         style="background: transparent; border: transparent"
                       />
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
               <div class="col-12 col-md-6">
@@ -355,15 +364,15 @@
                   style="position: relative"
                 >
                   <div class="input-label3">Maximum Buy (ALGO)</div>
-                  <form class="row g-0 w-100 p-4">
+                  <div class="row g-0 w-100 p-4">
                     <div class="col-12 d-flex align-items-around">
-                      <input
+                      <input name="token_maxbuy_algo"
                         class="w-100"
                         placeholder="0.00"
                         style="background: transparent; border: transparent"
                       />
                     </div>
-                  </form>
+                  </div>
                 </div>
               </div>
 
@@ -373,62 +382,62 @@
                 style="position: relative"
               >
                 <div class="input-label3">Refund Type</div>
-                <form class="row g-0 w-100 p-4">
+                <div class="row g-0 w-100 p-4">
                   <div class="col-12 d-flex align-items-around">
-                    <select class="form-select-sm w-100" aria-label=".form-select-sm example">
+                    <select name="token_refund_type" class="form-select-sm w-100" aria-label=".form-select-sm example">
                       <option class="text-secondary" selected>--- Select --- </option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option value="one">One</option>
+                      <option value="two">Two</option>
+                      <option value="three">Three</option>
                     </select>
                   </div>
-                </form>
+                </div>
               </div>
               <div
                 class="d-flex align-items-center mt-5 input-box2"
                 style="position: relative"
               >
                 <div class="input-label3">Router</div>
-                <form class="row g-0 w-100 p-4">
+                <div class="row g-0 w-100 p-4">
                   <div class="col-12 d-flex align-items-around">
-                    <select class="form-select-sm w-100" aria-label=".form-select-sm example">
+                    <select name="token_router" class="form-select-sm w-100" aria-label=".form-select-sm example">
                       <option class="text-secondary" selected>--- Select --- </option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option value="one">One</option>
+                      <option value="two">Two</option>
+                      <option value="three">Three</option>
                     </select>
                   </div>
-                </form>
+                </div>
               </div>
               <div
                 class="d-flex align-items-center mt-5 input-box2"
                 style="position: relative"
               >
                 <div class="input-label3">Liquidity (%)</div>
-                <form class="row g-0 w-100 p-4">
+                <div class="row g-0 w-100 p-4">
                   <div class="col-12 d-flex align-items-around">
-                    <input
+                    <input name="token_liquidity"
                       class="w-100"
                       placeholder="0.00"
                       style="background: transparent; border: transparent"
                     />
                   </div>
-                </form>
+                </div>
               </div>
               <div
                 class="d-flex align-items-center mt-5 input-box2"
                 style="position: relative"
               >
                 <div class="input-label3">Listing Rate</div>
-                <form class="row g-0 w-100 p-4">
+                <div class="row g-0 w-100 p-4">
                   <div class="col-12 d-flex align-items-around">
-                    <input
+                    <input name="token_listingrate"
                       class="w-100"
                       placeholder="0.00"
                       style="background: transparent; border: transparent"
                     />
                   </div>
-                </form>
+                </div>
               </div>
 
               <span
@@ -450,13 +459,13 @@
                     style="position: relative"
                   >
                     <div class="input-label3">Start Time (UTC)</div>
-                    <form class="row g-0 w-100 p-4">
+                    <div class="row g-0 w-100 p-4">
                       <div class="col-12 d-flex align-items-around">
                         
-                        <input style='width:100%;background-color:unset;border:none'  type="time" id="appt" name="appt">
+                        <input style='width:100%;background-color:unset;border:none'  type="time" id="appt" name="token_start_time">
                         
                       </div>
-                    </form>
+                    </div>
                   </div>
                 </div>
                 <div class="col-12 col-md-6">
@@ -465,11 +474,11 @@
                     style="position: relative"
                   >
                     <div class="input-label3">End Time (UTC)</div>
-                    <form class="row g-0 w-100 p-4">
+                    <div class="row g-0 w-100 p-4">
                       <div class="col-12 d-flex align-items-around">
-                        <input style='width:100%;background-color:unset;border:none'  type="time" id="appt" name="appt">
+                        <input style='width:100%;background-color:unset;border:none'  type="time" id="appt" name="token_end_time">
                       </div>
-                    </form>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -478,48 +487,56 @@
                 style="position: relative"
               >
                 <div class="input-label3">Liquidity Lock Up (days)</div>
-                <form class="row  g-0 w-100 p-4">
+                <div class="row  g-0 w-100 p-4">
                   <div class="col-12 d-flex align-items-around">
-                    <input
+                    <input name="token_liquidity_lockup"
                       class="w-100"
                       placeholder="0"
                       style="background: transparent; border: transparent"
                     />
                   </div>
-                </form>
+                </div>
               </div>
 
               <!--input end-->
-              <div class="d-flex justify-content-center">
-                <div class="d-flex justify-content-between" style="width: 20%">
-                  <a
+              <div class="">
+                <div class="row mt-3">
+                  <div class="col-6 d-flex justify-content-end">
+                    <a
                     href="/index.html"
-                    class="btn-lg"
+                    class="btn link-color"
                     style="
-                      text-decoration: none;
+                    
                       background-color: white;
-                      border: none;
-                      margin-top: 1.5em;
+                      border: none;    
                     "
                   >
                     Back
                   </a>
-                  <a
-                    href="/launchpad-add-info.html"
-                    class="btn-lg"
+
+                  </div>
+                  <div class="col-6 d-flex justify-content-begin">
+                    <button
+                    type="submit"
+                    class="btn link-color"
                     style="
                       text-decoration: none;
                       background-color: white;
+                      
                       border: none;
-                      margin-top: 1.5em;
+                      
                     "
                   >
                     Next
-                  </a>
+                </button>
+                  </div>
+                  
+                  
                 </div>
               </div>
             </div>
           </div>
+        </form>
         </div>
       </div>
 
@@ -565,5 +582,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="/static/main.js"></script>
   </body>
 </html>
