@@ -2,6 +2,15 @@ body{
     font-family: Inter;
     background-color: rgba(255, 255, 255, 1);
 }
+.body{
+    padding: 3%;
+    position: relative;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 95%;
+    overflow-y: scroll;
+    
+}
 a{
     text-decoration: none;
 }
@@ -36,13 +45,14 @@ h1{
 .logo-img-box{
     width: 4em;
     height: 2em;
-    border: 1px solid red;
+    
     background-color: black;
     opacity: 40%;
     color: white;
     position: relative;
     
 }
+
 .topnav-header{
     padding-left: 1em;
 }
@@ -112,10 +122,10 @@ textarea{
     height: 7em; background-color: transparent;border: black 1px solid;border-radius: 10px;
 }
 .input-label{
-    width: auto;height: 30px;background-color: rgba(160, 241, 255, 1);position: absolute;top: -45%;border-radius: 10px;padding: 5px 5px 5px 5px;
+    width: auto;height: 30px;background-color: rgba(160, 241, 255, 1);position: absolute;top: -95%;border-radius: 10px;padding: 5px 5px 5px 5px;
 }
 .input-label2{
-    width: auto;height: 30px;background-color: rgba(196, 196, 196, 1);position: absolute;top: -20%;left: 2%;border-radius: 10px;padding: 5px 5px 5px 5px;
+    width: auto;height: 30px;background-color: rgba(196, 196, 196, 1);position: absolute;top: -30%;left: 2%;border-radius: 10px;padding: 5px 5px 5px 5px;
 }
 .input-label3{
     width: auto;height: 2em;background-color: rgba(196, 196, 196, 1);position: absolute;top: -40%;left: 2%;border-radius: 10px;padding: 5px 5px 5px 5px;
@@ -125,8 +135,104 @@ textarea{
 }
 select{
     background-color: transparent;
-    width: 100%;
+    
     outline: none;
     border: none;
+    font-family: 'Font Awesome 5 free';
+    font-weight: 900;
+}
+option{
+    font-family: 'Font Awesome 5 free';
+    font-weight: 900;
+}
+/* drop down of usd and algo */
+.select {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 7em;
+  height: auto;
 }
 
+.option {
+  margin-top: 5%;
+  padding: 0 30px 0 10px;
+  min-height: 2.5em;
+  display: flex;
+  align-items: center;
+  background: white;
+
+  border: solid black 2px;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  width: 7em;
+  pointer-events: none;
+  order: 2;
+  z-index: 1;
+  transition: background 0.4s ease-in-out;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.option:hover {
+  background: rgba(28, 129, 245, 1);
+}
+
+.select:focus .option {
+  position: relative;
+  pointer-events: all;
+}
+
+.option-select {
+  opacity: 0;
+  position: absolute;
+  left: -99999px;
+}
+
+.option-select:checked + label {
+  order: 1;
+  z-index: 2;
+  background: white;
+  border-top: none;
+  position: relative;
+}
+
+.option-select:checked + label:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 2.5px);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.option-select:checked + label:before {
+  position: absolute;
+  right: 0;
+  height: 3em;
+  width: 3em;
+  content: "";
+}
+/*end of usd and algo dropdown*/
+
+
+@media (max-width: 760px) {
+    .logo-img-box{
+        width: 2em;
+        height: 2em;
+    }
+    .topnav-header{
+        padding-left: 0.3em;
+        
+    }
+    body{
+        font-size: small;
+    }
+}    
